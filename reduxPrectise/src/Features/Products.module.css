@@ -1,0 +1,81 @@
+.card {
+  width: fit-content;
+  height: 30rem;
+  padding: 10px;
+  background-color: #1d1a16;
+  border-radius: 0.5rem;
+  /* overflow: hidden; */
+  text-align: center;
+  border: 1px solid #ffc404;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.card article {
+  /* width: fit-content; */
+  display: flex;
+  width: 18rem;
+  height: 100%;
+  /* height: 30rem; */
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+
+  /* display: flex; */
+  /* flex-direction: column;
+  justify-content: space-between; */
+  /* background-color: rgb(33, 131, 138); */
+}
+
+.card img {
+  width: 20rem;
+  height: 10rem;
+  object-fit: cover;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0.25rem 0;
+}
+
+.price {
+  display: inline-block;
+  background-color: #312c1d;
+  color: #ffc404;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 0.5rem 2rem;
+  margin: 0;
+  border-radius: 4px;
+  /* box-shadow: 0 1px 12px rgba(255, 217, 0, 0.5); */
+}
+
+.quantity {
+  margin-right: 10px;
+  background-color: #312c1d;
+  width: 8rem;
+  height: 2rem;
+  color: #ffc404;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 0.2rem 2rem;
+  border-radius: 4px;
+}
+
+.card button {
+  width: 8rem;
+  height: 2rem;
+  cursor: pointer;
+  border: none;
+  background-color: #312c1d;
+  color: #ffc404;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.description {
+  margin: 1rem;
+}
