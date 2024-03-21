@@ -13,6 +13,7 @@ function Cart() {
     (totalPrice, item) => totalPrice + item.quantity * item.price,
     0
   );
+  // console.log(cartTotal, "cart total");
 
   function handleCloseCart() {
     userProgressCtx.hideCart();

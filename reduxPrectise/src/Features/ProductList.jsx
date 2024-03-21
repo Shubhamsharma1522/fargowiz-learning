@@ -15,7 +15,6 @@ const ProductList = () => {
         const { data } = await axios.get("https://dummyjson.com/products");
         setLoadedData(data.products);
       } catch (error) {
-        // handle the error here
         console.error("Error fetching data:", error);
       }
     };

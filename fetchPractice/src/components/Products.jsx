@@ -16,7 +16,7 @@ function Products({ item }) {
 
   const handleQuantityChange = (event) => {
     const value = parseInt(event.target.value);
-
+console.log(value, "value");
     if (!isNaN(value) && value > 0) {
       setQuantity(value);
     }

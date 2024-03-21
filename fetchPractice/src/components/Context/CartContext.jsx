@@ -7,7 +7,7 @@ const initialState = {
   products: [],
 };
 
-//reducer function to manage cartt state
+//reducer function frr manage cartt state
 const cartReducer = (state, action) => {
   switch (action.type) {
     case "ADD_PRODUCTS":
