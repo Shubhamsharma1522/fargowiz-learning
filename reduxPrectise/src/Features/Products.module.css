@@ -2,11 +2,11 @@
   width: fit-content;
   height: 30rem;
   padding: 10px;
-  background-color: #1d1a16;
+  background-color: gray;
   border-radius: 0.5rem;
   /* overflow: hidden; */
   text-align: center;
-  border: 1px solid #ffc404;
+  /* border: 1px solid #ffc404; */
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
   overflow: hidden;
 }
@@ -35,16 +35,17 @@
 }
 
 .card h3 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
   margin: 0.25rem 0;
+  color: white;
 }
 
 .price {
   display: inline-block;
-  background-color: #312c1d;
-  color: #ffc404;
-  font-size: 0.9rem;
+  /* background-color: #312c1d; */
+  color: black;
+  font-size: 1.2rem;
   font-weight: bold;
   padding: 0.5rem 2rem;
   margin: 0;
@@ -54,10 +55,11 @@
 
 .quantity {
   margin-right: 10px;
-  background-color: #312c1d;
+  border: none;
+  background-color: black;
   width: 8rem;
   height: 2rem;
-  color: #ffc404;
+  color: white;
   font-size: 0.9rem;
   font-weight: bold;
   padding: 0.2rem 2rem;
@@ -69,8 +71,8 @@
   height: 2rem;
   cursor: pointer;
   border: none;
-  background-color: #312c1d;
-  color: #ffc404;
+  background-color: black;
+  color: white;
   justify-content: center;
   align-items: center;
   border-radius: 4px;
@@ -78,4 +80,6 @@
 
 .description {
   margin: 1rem;
+  color: black;
+  font-weight: bold;
 }

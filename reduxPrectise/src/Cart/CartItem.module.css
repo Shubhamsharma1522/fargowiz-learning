@@ -1,9 +1,10 @@
 .box {
+  
   margin: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 20px;
-  background-color: #423838;
+  background-color: #57857d;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -23,6 +24,7 @@
   width: 8rem;
   height: 8rem;
   margin-right: 10px;
+  border: 2px solid white;
 }
 
 .details {
@@ -32,14 +34,16 @@
 }
 
 .name {
-  font-size: 16px;
-  margin-bottom: 5px;
+  font-size: 26px;
+  font-weight: bold;
+  /* margin-bottom: 5px; */
+  margin-left: 30%;
 }
 
 .price {
   margin-left: 10px;
   font-size: 20px;
-  color: #f70f0f;
+  color: white;
 }
 
 .controls {
@@ -52,20 +56,27 @@
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: black;
+  color: white;
+  font-weight: bold;
   cursor: pointer;
 }
 
-.button {
+.controls button:hover{
+  background-color: #b1ab62;
+  color: #312c1d;
+}
+
+/* .button {
   padding: 5px 10px;
   border: none;
   border-radius: 3px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: black;
+  color: #ffc404;
+  font-weight: bold;
   cursor: pointer;
   margin-right: 5px;
-}
+} */
 
 .quantity {
   margin: 0 5px;
@@ -88,20 +99,25 @@
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: black;
+  color: white;
+  /* font-weight: bold; */
   cursor: pointer;
 }
 
+
 .button:hover {
-  background-color: #0056b3;
+  background-color: #b1ab62;
+  color: #312c1d;
 }
 
 .button:active {
-  background-color: #004080;
+  background-color: #b1ab62;
+  color: #312c1d;
 }
 
 .removeButton {
   display: flex;
   justify-content: end;
 }
+

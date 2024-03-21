@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { authActions } from "../Store/authSlice";
-import { Link, useNavigate } from "react-router-dom";
 import classes from "./Register.module.css";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -14,80 +12,80 @@ const Register = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    //username validation
+    // username validation
     if (!username || !username.trim()) {
       setError("Please enter your username.");
       return;
     }
 
-    //email validation
+    // email validation
     if (!email || !email.trim()) {
       setError("Please enter your email.");
       return;
     }
 
-    //password validation
+    // password validation
     if (!password || !password.trim()) {
       setError("Please enter your password.");
       return;
     }
 
-    // navigatte on login if no errors
-    navigate("/login");
+    // navigate to login if no errors
+    navigate("/");
   };
 
   return (
     <div className={classes.register}>
-      <div className={classes.formContainer}>
-        <h1>Register</h1>
-        <form onSubmit={handleSubmit} className={classes.form}>
-          <div className={classes.formGroup}>
-            <input
-              type="text"
-              id="username"
-              name="username"
-              placeholder="Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              className={classes.inputField}
-            />
-          </div>
-          <div className={classes.formGroup}>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="E-Mail"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className={classes.inputField}
-            />
-          </div>
-          <div className={classes.formGroup}>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className={classes.inputField}
-            />
-          </div>
-          {error && <div className={classes.error}>{error}</div>}
-          <div className={classes.formGroup}>
-            <button className={classes.submitButton}>Register</button>
-          </div>
-          <div className={classes.formGroup}>
-            <p>
-              Already have an account?
-              <Link to="/login" className={classes.loginLink}>
-                Login
-              </Link>
-            </p>
-          </div>
-        </form>
-      </div>
+      <h1>Register</h1>
+      <form onSubmit={handleSubmit}>
+        <div className={classes.usernamediv}>
+          <label htmlFor="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            className={classes.username}
+          />
+        </div>
+        <div className={classes.emaildiv}>
+          <label htmlFor="email">E-Mail</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="E-Mail"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className={classes.email}
+          />
+        </div>
+        <div className={classes.passworddiv}>
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className={classes.password}
+          />
+        </div>
+        {error && (
+          <div style={{ color: "red", marginBottom: "10px" }}>{error}</div>
+        )}
+        <div className={classes.buttondiv}>
+          <button className={classes.button}>Register</button>
+        </div>
+        <div style={{ marginBottom: "20px" }}>
+          <p>
+            Already have an account? <Link to="/login">Login</Link>
+          </p>
+        </div>
+      </form>
     </div>
   );
 };

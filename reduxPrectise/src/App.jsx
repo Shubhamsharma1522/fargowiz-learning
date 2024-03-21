@@ -1,5 +1,4 @@
 // import { useSelector } from "react-redux";
-import "./App.css";
 // import Cart from "./Cart/Cart";
 import ProductList from "./Features/ProductList";
 

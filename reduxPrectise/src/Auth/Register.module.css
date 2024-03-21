@@ -1,62 +1,58 @@
-/* Register.module.css */
-
 .register {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.formContainer {
-  width: 30rem;
-}
-
-.form {
-  background-color: #f0f0f0;
+  color: black;
+  background-color: rgb(172, 163, 135);
+  max-width: 400px;
+  margin: 0 auto;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
 }
 
-.form h1 {
-  text-align: center;
+.usernamediv {
   margin-bottom: 20px;
 }
 
-.formGroup {
-  margin-bottom: 15px;
-}
-
-.inputField {
+.username {
   width: 100%;
   padding: 10px;
+  font-size: 16px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  font-size: 16px;
 }
 
-.error {
-  color: #ff0000;
-  font-size: 14px;
+.emaildiv {
+  margin-bottom: 20px;
 }
 
-.submitButton {
+.email {
   width: 100%;
   padding: 10px;
-  border-radius: 5px;
-  background-color: #007bff;
-  border: none;
-  color: #fff;
   font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.passworddiv {
+  margin-bottom: 20px;
+}
+
+.password {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.buttondiv {
+  margin-bottom: 20px;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.submitButton:hover {
-  background-color: #0056b3;
-}
-
-.loginLink {
-  color: #007bff;
-  text-decoration: none;
 }

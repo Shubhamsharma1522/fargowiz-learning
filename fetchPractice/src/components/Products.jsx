@@ -7,15 +7,16 @@ function Products({ item }) {
   const [quantity, setQuantity] = useState(1);
 
   const handleAddProduct = (event) => {
+    // console.log(quantity,"quantity");
     event.preventDefault();
     cartCtx.addProducts(item, quantity);
-    // Reset quantity after adding to cart
+
     setQuantity(1);
   };
 
   const handleQuantityChange = (event) => {
     const value = parseInt(event.target.value);
-    // Ensure value is a positive integer
+
     if (!isNaN(value) && value > 0) {
       setQuantity(value);
     }

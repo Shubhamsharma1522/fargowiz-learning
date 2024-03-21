@@ -10,7 +10,7 @@ const Products = ({ item }) => {
 
   const handleAddToCart = (event) => {
     event.preventDefault();
-    console.log("quantity", quantity);
+    // console.log("quantity", quantity);
     dispatch(cartActions.addToCart({ ...item, quantity }));
     setQuantity(1);
   };
@@ -31,7 +31,7 @@ const Products = ({ item }) => {
         </div>
 
         <p className={classes.description}>{item.description}</p>
-        <p className={classes.price}>{item.price}</p>
+        <p className={classes.price}>${item.price}</p>
 
         <form onSubmit={handleAddToCart}>
           <input

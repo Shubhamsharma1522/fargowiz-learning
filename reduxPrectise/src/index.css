@@ -5,11 +5,12 @@
 }
 
 body {
-  margin: 0;
+  margin: 10px;
   font-family: "Raleway", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(#080808, #000000);
+  /* background: linear-gradient(#080808, #000000); */
+  background-color: rgb(187, 164, 148);
   color: #d9e2f1;
   min-height: 100vh;
 }
@@ -43,7 +44,6 @@ body {
   overflow: hidden;
 }
 
-
 .cart {
   /* position: fixed; */
   display: flex;
@@ -65,7 +65,7 @@ body {
   font: inherit;
   cursor: pointer;
   background-color: #ffc404;
-  border: 1px solid #ffc404;
+  /* border: 1px solid #ffc404; */
   color: #1f1a09;
   padding: 0rem 1.5rem;
   border-radius: 4px;
@@ -142,48 +142,20 @@ body {
 
 .pagination a {
   text-decoration: none;
-  color: #ffc404;
+  color: black;
   padding: 5px 10px;
-  border: 1px solid #ffc404;
+  border: 1px solid black;
   border-radius: 5px;
 }
 
 .pagination a.active {
-  background-color: #ffc404;
+  background-color: black;
   color: #fff;
 }
 
 .pagination a:hover {
-  background-color: #ffb004;
+  background-color: #a58a51;
   color: #fff;
 }
 
-.loader {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80vh;
-}
 
-.notification {
-  position: fixed;
-  top: 1rem;
-  right: 10rem;
-  background-color: #f44336;
-  color: white;
-  padding: 15px;
-  border-radius: 5px;
-  /* z-index: 9999; */
-}
-
-.close {
-  cursor: pointer;
-  position: absolute;
-  top: 5px;
-  right: 10px;
-  font-size: 20px;
-}
-
-.close:hover {
-  color: black;
-}
