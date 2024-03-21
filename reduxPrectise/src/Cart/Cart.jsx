@@ -22,16 +22,18 @@ const Cart = () => {
   };
 
   return (
-    <div className={classes.cart}>
-      <h2>Your Cart</h2>
-      <ul>
-        {cartItems.map((item) => (
-          <CartItems key={item.id} item={item} />
-        ))}
-      </ul>
-      <div className={classes.bottom}>
-        <p>Total Cart Price : ${totalPrice}</p>
-        <button onClick={placeOrderHandler}>Place Order</button>
+    <div className={classes.div}>
+      <div className={classes.cart}>
+        <h2>Your Cart</h2>
+        <ul>
+          {cartItems.map((item) => (
+            <CartItems key={item.id} item={item} />
+          ))}
+        </ul>
+        <div className={classes.bottom}>
+          <p>Total Cart Price : ${totalPrice}</p>
+          <button onClick={placeOrderHandler}>Place Order</button>
+        </div>
       </div>
     </div>
   );

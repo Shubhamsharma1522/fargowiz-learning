@@ -35,7 +35,7 @@ const Products = ({ item }) => {
         <p className={classes.description}>{item.description}</p>
         <p className={classes.price}>${item.price}</p>
 
-        <form onSubmit={handleAddToCart}>
+        <form className={classes.form} onSubmit={handleAddToCart}>
           <input
             className={classes.quantity}
             type="number"

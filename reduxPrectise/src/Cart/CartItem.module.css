@@ -1,11 +1,11 @@
 .box {
-  
   margin: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 20px;
-  background-color: #57857d;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  box-shadow: 1px 1px 7px black;
+  border-radius: 10px;
 }
 
 .header {
@@ -15,40 +15,47 @@
 }
 
 .item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
+  /* display: flex;
+  align-items: center; */
+  margin-bottom: -20px;
 }
 
 .item img {
-  width: 8rem;
+  width: 10rem;
   height: 8rem;
   margin-right: 10px;
-  border: 2px solid white;
+  /* border: 2px solid black; */
+  box-shadow: 1px 1px 7px black;
+  border-radius: 10px;
 }
 
 .details {
-  flex: 1;
+  /* flex: 1;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; */
+  display: grid;
+  justify-content: end;
 }
 
 .name {
   font-size: 26px;
   font-weight: bold;
   /* margin-bottom: 5px; */
-  margin-left: 30%;
+  /* margin-left: 23rem; */
+  display: flex;
+  justify-content: end;
 }
 
 .price {
   margin-left: 10px;
   font-size: 20px;
-  color: white;
+  color: black;
+  text-shadow: 1px 1px 2px black;
 }
 
 .controls {
-  display: flex;
-  align-items: center;
+  /* display: flex;
+  align-items: center; */
 }
 .controls button {
   height: 30px;
@@ -62,7 +69,7 @@
   cursor: pointer;
 }
 
-.controls button:hover{
+.controls button:hover {
   background-color: #b1ab62;
   color: #312c1d;
 }
@@ -105,7 +112,6 @@
   cursor: pointer;
 }
 
-
 .button:hover {
   background-color: #b1ab62;
   color: #312c1d;
@@ -120,4 +126,3 @@
   display: flex;
   justify-content: end;
 }
-

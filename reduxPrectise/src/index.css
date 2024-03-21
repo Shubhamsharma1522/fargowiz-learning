@@ -5,12 +5,12 @@
 }
 
 body {
-  margin: 10px;
+  margin: 0px;
   font-family: "Raleway", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background: linear-gradient(#080808, #000000); */
-  background-color: rgb(187, 164, 148);
+  background-color: white;
   color: #d9e2f1;
   min-height: 100vh;
 }
@@ -157,5 +157,3 @@ body {
   background-color: #a58a51;
   color: #fff;
 }
-
-

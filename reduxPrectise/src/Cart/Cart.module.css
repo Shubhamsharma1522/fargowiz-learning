@@ -1,7 +1,8 @@
+
 .cart {
-  max-width: 80%;
+  max-width: 50%;
   align-items: center;
-  margin-left: 10rem;
+  margin-left: 20rem;
   /* margin: 10px; */
   /* display: flex;
   justify-content: center; */
@@ -15,12 +16,13 @@
   margin: 1rem;
   color: black;
   text-align: center;
+  text-shadow: 1px 1px 1px black;
 }
 
 .cart ul {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin:0;
 }
 
 .bottom {

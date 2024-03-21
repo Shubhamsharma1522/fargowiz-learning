@@ -1,20 +1,22 @@
 .card {
   width: fit-content;
-  height: 30rem;
-  padding: 10px;
-  background-color: gray;
+  margin: 10px;
+  /* height: 30rem; */
+  /* padding: 0px; */
+  background-color: white;
   border-radius: 0.5rem;
   /* overflow: hidden; */
   text-align: center;
   /* border: 1px solid #ffc404; */
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 7px black;
+  border-radius: 16px;
   overflow: hidden;
 }
 
 .card article {
   /* width: fit-content; */
   display: flex;
-  width: 18rem;
+  width: 19rem;
   height: 100%;
   /* height: 30rem; */
   flex-direction: column;
@@ -31,6 +33,7 @@
 .card img {
   width: 20rem;
   height: 10rem;
+  box-shadow: 1px 1px 5px black;
   object-fit: cover;
 }
 
@@ -38,13 +41,15 @@
   font-size: 1.8rem;
   font-weight: bold;
   margin: 0.25rem 0;
-  color: white;
+  color: black;
+  /* text-shadow: 1px 1px 3px black; */
 }
 
 .price {
   display: inline-block;
   /* background-color: #312c1d; */
   color: black;
+  text-shadow: 1px 1px 3px black;
   font-size: 1.2rem;
   font-weight: bold;
   padding: 0.5rem 2rem;
@@ -57,21 +62,30 @@
   margin-right: 10px;
   border: none;
   background-color: black;
+  box-shadow: 1px 1px 8px black;
   width: 8rem;
   height: 2rem;
   color: white;
   font-size: 0.9rem;
   font-weight: bold;
-  padding: 0.2rem 2rem;
+  /* padding: 0.2rem 2rem; */
   border-radius: 4px;
+  /* padding-bottom: 10px; */
+
+}
+
+.form {
+  padding-bottom: 10px;
 }
 
 .card button {
   width: 8rem;
   height: 2rem;
+  /* padding-bottom: 10px; */
   cursor: pointer;
   border: none;
   background-color: black;
+  box-shadow: 1px 1px 8px black;
   color: white;
   justify-content: center;
   align-items: center;

@@ -25,9 +25,11 @@ function CartItems({ item }) {
   return (
     <div className={classes.box}>
       <div className={classes.item}>
+        <div className={classes.name}>{title}</div>
+
         <img src={images[0]} alt={title} />
+
         <div className={classes.details}>
-          <div className={classes.name}>{title}</div>
           <div className={classes.controls}>
             <button onClick={decreaseQuantityHandler}>-</button>
             <span className={classes.quantity}>{quantity}</span>
