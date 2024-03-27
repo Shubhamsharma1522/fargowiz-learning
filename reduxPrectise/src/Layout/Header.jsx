@@ -54,7 +54,9 @@ const Header = () => {
           </button>
         )}
       </h2>
-      <div style={{ fontSize: "10px" }}>{user.email}</div>
+
+      {isAuthenticate && <div style={{ fontSize: "10px" }}>{user.email}</div>}
+
       {!isAuthenticate ? (
         <div className={classes.button}>
           <Link to="/login">
