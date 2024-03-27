@@ -6,9 +6,10 @@ import { cartActions } from "../Store/cartSlice";
 import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
-  const dispath = useDispatch();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const cartItems = useSelector((state) => state.cart.products);
+  const { isAuthenticate } = useSelector((state) => state.auth);
 
   const totalPrice = cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
@@ -16,25 +17,31 @@ const Cart = () => {
   );
 
   const placeOrderHandler = () => {
-    dispath(cartActions.clearCart());
+    dispatch(cartActions.clearCart());
     navigate("/products");
     alert("Congratulations !!! your order successfully placed");
   };
 
   return (
     <div className={classes.div}>
-      <div className={classes.cart}>
-        <h2>Your Cart</h2>
-        <ul>
-          {cartItems.map((item) => (
-            <CartItems key={item.id} item={item} />
-          ))}
-        </ul>
-        <div className={classes.bottom}>
-          <p>Total Cart Price : ${totalPrice}</p>
-          <button onClick={placeOrderHandler}>Place Order</button>
+      {isAuthenticate && (
+        <div className={classes.cart}>
+          <h2>Your Cart</h2>
+          <ul>
+            {cartItems.length > 0 ? (
+              cartItems.map((item) => <CartItems key={item.id} item={item} />)
+            ) : (
+              <li style={{ textAlign: "center" }}>Your cart is empty.</li>
+            )}
+          </ul>
+          {cartItems.length > 0 && (
+            <div className={classes.bottom}>
+              <p>Total Cart Price : ${totalPrice}</p>
+              <button onClick={placeOrderHandler}>Place Order</button>
+            </div>
+          )}
         </div>
-      </div>
+      )}
     </div>
   );
 };

@@ -3,55 +3,65 @@ import classes from "./Login.module.css";
 import { useDispatch } from "react-redux";
 import { authActions } from "../Store/authSlice";
 import { Link, useNavigate } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [passwordStrength, setPasswordStrength] = useState("");
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    error: "",
+    passwordStrength: "",
+  });
+
+  const { email, password, error, passwordStrength } = formData;
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // email validation
     if (!email || !email.trim()) {
-      setError("Please enter your email.");
+      setFormData({ ...formData, error: "Please enter your email." });
       return;
     }
 
-    // password validation
     if (!password || !password.trim()) {
-      setError("Please enter your password.");
+      setFormData({ ...formData, error: "Please enter your password." });
       return;
     }
 
-    // password strength validation
     if (password.length < 8) {
-      setError("Password must be at least 8 characters long.");
+      setFormData({
+        ...formData,
+        error: "Password must be at least 8 characters long.",
+      });
       return;
     }
 
-    // dispatch login action if no errors
-    dispatch(authActions.logIn());
+    dispatch(authActions.logIn({ email }));
+    console.log(email, "email");
     navigate("/products");
+
+    toast.success("Successfully Logged In!");
   };
 
-  const handlePasswordChange = (e) => {
-    const newPassword = e.target.value;
-    setPassword(newPassword);
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    // console.log("Name and value", e);
+    setFormData({
+      ...formData,
+      [name]: value,
+      error: "",
 
-    // passworrrd strength indication
-    if (newPassword.length === 0) {
-      setPasswordStrength("");
-    } else if (newPassword.length < 8) {
-      setPasswordStrength("Weak");
-    } else if (newPassword.length < 12) {
-      setPasswordStrength("Moderate");
-    } else {
-      setPasswordStrength("Strong");
-    }
+      passwordStrength:
+        value.length === 0
+          ? ""
+          : value.length < 8
+          ? "Weak"
+          : value.length < 12
+          ? "Moderate"
+          : "Strong",
+    });
   };
 
   return (
@@ -66,7 +76,7 @@ const Login = () => {
             name="email"
             placeholder="E-Mail"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={handleInputChange}
             className={classes.email}
           />
         </div>
@@ -78,7 +88,7 @@ const Login = () => {
             name="password"
             placeholder="Password"
             value={password}
-            onChange={handlePasswordChange}
+            onChange={handleInputChange}
             className={classes.password}
           />
         </div>
@@ -90,13 +100,9 @@ const Login = () => {
             Password Strength: {passwordStrength}
           </div>
         )}
-        <div style={{ marginBottom: "20px" }}>
-          <label>
-            <input type="checkbox" name="checkbox" />
-            Forgot Password
-          </label>
-        </div>
+        <div style={{ marginBottom: "20px" }}></div>
         <button className={classes.button}>Login</button>
+        <Toaster position="top-center" reverseOrder={false} />
       </form>
       <div style={{ marginTop: "20px" }}>
         <p>Create Account</p>

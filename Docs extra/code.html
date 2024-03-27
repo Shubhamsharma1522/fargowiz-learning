@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Editing Toolbox</title>
+    <style>
+      /* Styles for the toolbox menu */
+      .toolbox {
+        position: absolute;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        padding: 5px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="textArea" rows="4" cols="50"></textarea>
+
+    <div class="toolbox" id="toolbox">
+      <button onclick="makeBold()">Bold</button>
+      <button onclick="makeItalic()">Italic</button>
+      <button onclick="makeUnderline()">Underline</button>
+    </div>
+
+    <script>
+      // Get the textarea element
+      const textArea = document.getElementById("textArea");
+      // Get the toolbox menu element
+      const toolbox = document.getElementById("toolbox");
+
+      // Function to show the toolbox menu
+      function showToolbox(x, y) {
+        toolbox.style.display = "block";
+        toolbox.style.left = x + "px";
+        toolbox.style.top = y + "px";
+      }
+
+      // Function to hide the toolbox menu
+      function hideToolbox() {
+        toolbox.style.display = "none";
+      }
+
+      // Function to make selected text bold
+      function makeBold() {
+        document.execCommand("bold", false, null);
+      }
+
+      // Function to make selected text italic
+      function makeItalic() {
+        document.execCommand("italic", false, null);
+      }
+
+      // Function to make selected text underlined
+      function makeUnderline() {
+        document.execCommand("underline", false, null);
+      }
+
+      // Event listener to show toolbox when text is selected
+      textArea.addEventListener("mouseup", function (event) {
+        const selectedText = window.getSelection().toString();
+        if (selectedText !== "") {
+          showToolbox(event.pageX, event.pageY);
+        } else {
+          hideToolbox();
+        }
+      });
+
+      // Event listener to hide toolbox when clicking outside
+      document.addEventListener("click", function (event) {
+        if (!toolbox.contains(event.target) && event.target !== textArea) {
+          hideToolbox();
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+import React, { useState } from 'react';
+import { View, Text, TouchableOpacity, Clipboard, Alert } from 'react-native';
+
+const MyTextComponent = () => {
+  const [selectedText, setSelectedText] = useState('');
+
+  const handleTextSelection = (text) => {
+    setSelectedText(text);
+  };
+
+  const copyToClipboard = () => {
+    Clipboard.setString(selectedText);
+    Alert.alert('Copied to clipboard');
+  };
+
+  const toggleHighlight = () => {
+    // Placeholder for highlight logic
+    Alert.alert('Highlight option clicked');
+  };
+
+  const toggleBold = () => {
+    // Placeholder for bold text logic
+    Alert.alert('Bold option clicked');
+  };
+
+  return (
+    <View>
+      <Text selectable onPress={(event) => handleTextSelection(event.nativeEvent.selection)}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget feugiat nisl, in ultricies eros. Ut congue leo vel urna varius, in efficitur lacus venenatis.
+      </Text>
+      
+      {selectedText !== '' && (
+        <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
+          <TouchableOpacity onPress={copyToClipboard}>
+            <Text>Copy</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={toggleHighlight}>
+            <Text>Highlight</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={toggleBold}>
+            <Text>Bold</Text>
+          </TouchableOpacity>
+        </View>
+      )}
+    </View>
+  );
+};
+
+export default MyTextComponent;

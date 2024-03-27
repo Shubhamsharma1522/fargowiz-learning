@@ -1,37 +1,54 @@
 import React, { useState } from "react";
 import classes from "./Register.module.css";
 import { Link, useNavigate } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 
 const Register = () => {
   const navigate = useNavigate();
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    error: "",
+  });
+
+  const { username, email, password, confirmPassword, error } = formData;
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // username validation
     if (!username || !username.trim()) {
-      setError("Please enter your username.");
+      setFormData({ ...formData, error: "Please enter your username." });
       return;
     }
 
-    // email validation
     if (!email || !email.trim()) {
-      setError("Please enter your email.");
+      setFormData({ ...formData, error: "Please enter your email." });
       return;
     }
 
-    // password validation
     if (!password || !password.trim()) {
-      setError("Please enter your password.");
+      setFormData({ ...formData, error: "Please enter your password." });
       return;
     }
 
-    // navigate to login if no errors
+    if (password !== confirmPassword) {
+      setFormData({
+        ...formData,
+        error: "Please enter a valid confirm password",
+      });
+      return;
+    }
+
     navigate("/");
+
+    toast.success("Successfully Registered!");
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value, error: "" });
   };
 
   return (
@@ -46,7 +63,7 @@ const Register = () => {
             name="username"
             placeholder="Username"
             value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            onChange={handleInputChange}
             className={classes.username}
           />
         </div>
@@ -58,7 +75,7 @@ const Register = () => {
             name="email"
             placeholder="E-Mail"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={handleInputChange}
             className={classes.email}
           />
         </div>
@@ -70,7 +87,19 @@ const Register = () => {
             name="password"
             placeholder="Password"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={handleInputChange}
+            className={classes.password}
+          />
+        </div>
+        <div className={classes.passworddiv}>
+          <label htmlFor="password">Confirm Password</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            placeholder="Confirm Password"
+            value={confirmPassword}
+            onChange={handleInputChange}
             className={classes.password}
           />
         </div>
@@ -79,6 +108,7 @@ const Register = () => {
         )}
         <div className={classes.buttondiv}>
           <button className={classes.button}>Register</button>
+          <Toaster position="top-center" reverseOrder={false} />
         </div>
         <div style={{ marginBottom: "20px" }}>
           <p>

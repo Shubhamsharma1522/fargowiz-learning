@@ -20,13 +20,13 @@ const cartSlice = createSlice({
 
       if (existingProduct) {
         if (totalQuantityInCart + newProduct.quantity > 20) {
-          alert("Cannot add more items. Cart limit exceeded.");
+          alert("cannot add more items.... cart limit exceeded.");
           return;
         }
         existingProduct.quantity += newProduct.quantity || 1;
       } else {
         if (totalQuantityInCart + (newProduct.quantity || 1) > 20) {
-          alert("Cannot add more items. Cart limit exceeded.");
+          alert("cannot add more items.... cart limit exceeded.");
           return;
         }
         state.products.push(newProduct);
@@ -47,7 +47,7 @@ const cartSlice = createSlice({
 
       if (product) {
         if (totalQuantityInCart + 1 > 20) {
-          alert("Cannot add more items. Cart limit exceeded.");
+          alert("cannot add more items..., cart limit exceeded.");
           return;
         }
         product.quantity++;

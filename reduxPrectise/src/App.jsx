@@ -1,13 +1,15 @@
 // import { useSelector } from "react-redux";
 // import Cart from "./Cart/Cart";
-import ProductList from "./Features/ProductList";
+
+import { Outlet } from "react-router-dom";
+import Header from "./Layout/Header";
 
 function App() {
-  // const showCart = useSelector((state) => state.ui.cartIsVisible);
   return (
     <div>
       {/* {showCart && <Cart />} */}
-      <ProductList />
+      <Header />
+      <Outlet />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 .card {
   width: fit-content;
-  margin: 10px;
+  /* margin: 10px; */
   /* height: 30rem; */
   /* padding: 0px; */
   background-color: white;
@@ -71,7 +71,6 @@
   /* padding: 0.2rem 2rem; */
   border-radius: 4px;
   /* padding-bottom: 10px; */
-
 }
 
 .form {
@@ -96,4 +95,8 @@
   margin: 1rem;
   color: black;
   font-weight: bold;
+}
+
+.Itemquantity {
+  color: black;
 }

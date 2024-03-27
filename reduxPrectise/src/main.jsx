@@ -3,30 +3,21 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { Provider } from "react-redux";
 import store from "./Store/index.js";
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import App from "./App.jsx";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./Auth/Login.jsx";
 import Register from "./Auth/Register.jsx";
-import Header from "./Layout/Header.jsx";
 import Cart from "./Cart/Cart.jsx";
-
-const Root = () => {
-  return (
-    <>
-      <Header />
-      <Outlet />
-    </>
-  );
-};
+import ProductList from "./Features/ProductList.jsx";
+import App from "./App.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
+    element: <App />,
     children: [
-      { path: "/", element: <Login /> },
+      { path: "login", element: <Login /> },
       { path: "register", element: <Register /> },
-      { path: "products", element: <App /> },
+      { path: "products", element: <ProductList /> },
       { path: "cart", element: <Cart /> },
     ],
   },
